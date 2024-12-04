@@ -80,7 +80,9 @@ atsižvelgiant į turimą laiką, patirtį ir galimybes.
 
 + https://livebook.manning.com/book/building-ethereum-dapps/about-this-book/
 
-## Truffle IDE diegimas
+## Diegimai
+
+### Truffle IDE diegimas
 
 1. Reikia instaliuoti Node.js ir npm.
 <img src="https://github.com/user-attachments/assets/9b54d31a-48d9-4f23-a0aa-61425522318e" alt="Vaizdas" width="600"/>
@@ -154,3 +156,36 @@ Solidity v0.5.16 (solc-js)
 Node v18.20.5
 Web3.js v1.10.0      
 ```
+### MetaMask diegimas
+
+1. ,,Chrome" internetinėje parduotuvėje įsidiegiau MetaMask.
+
+<img src="https://github.com/user-attachments/assets/27b795e7-bd78-4e45-acf9-0d6ac020fdba" alt="Vaizdas" width="600"/>
+
+
+2. Svarbu ,,Extensions" sklityje patikrinti, ar MetaMask yra enabled.
+
+<img src="https://github.com/user-attachments/assets/3d05c241-69d3-4210-84d5-2832d01c99de" alt="Vaizdas" width="600"/>
+
+### Ganache diegimas
+
+1. https://archive.trufflesuite.com/ganache/ parsisiunčiame
+
+<img src="https://github.com/user-attachments/assets/16b87dc7-ecde-47ee-960b-2aa66cdc8ae7" alt="Vaizdas" width="600"/>
+
+2. Pačiame Sublime Text reikia atlikti šiuos žingsnius
+
+<img src="https://github.com/user-attachments/assets/ee7e0706-f9d1-4590-9cb1-5bf74f089512" alt="Vaizdas" width="600"/>
+
+### Sublime Text "Ethereum" paketo diegimas
+
+Šis paketas palengvina išmaniųjų sutarčių kūrimą Ethereum tinkle. Jis suteikia naudingų funkcijų, tokių kaip sintaksės paryškinimas ir kodo šablonai, kurie supaprastina programavimą su Solidity kalba. Tai padeda kūrėjams efektyviau dirbti kuriant decentralizuotas programas (dApps) Ethereum tinkle.
+
+1. https://packagecontrol.io/packages/Ethereum parsisiunčiam Ethereum paketą.
+
+<img src="https://github.com/user-attachments/assets/609b06f0-5437-477f-9219-11edb1b40718" alt="Vaizdas" width="600"/>
+
+2. 
+## Atliktos užduotys
+
+# I6ma
