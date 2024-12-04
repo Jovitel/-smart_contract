@@ -98,7 +98,7 @@ atsižvelgiant į turimą laiką, patirtį ir galimybes.
 
 
 + Instaliuojame Node.js 18 versiją su nvm.
-'''
+```
 C:\Users\JV>nvm --version
 1.1.12
 
@@ -112,12 +112,12 @@ npm v10.8.2 installed successfully.
 Installation complete. If you want to use this version, type
 
 nvm use 18.20.5
-'''
+```
 
 
 + Pakeičiame, kad naudotume šią versiją.
-'''
+```
 C:\Users\JV>nvm use 18
 Now using node v18.20.5 (64-bit)
-'''
+```
 
