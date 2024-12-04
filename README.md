@@ -88,11 +88,36 @@ atsižvelgiant į turimą laiką, patirtį ir galimybes.
 +  Tam naudojama Node Version Manager (nvm). Todėl parsisiunčiama nvm is https://github.com/coreybutler/nvm-windows/releases
 <img src="https://github.com/user-attachments/assets/169241f8-145c-4627-a428-7dabd43f91a9" alt="Vaizdas" width="600"/>
 
+
 + Atsisiunčiau nvm-setup.zip (diegimo failą) ir jį paleidau nvm-setup.exe
 <img src="https://github.com/user-attachments/assets/b12f0703-2670-4a15-acf4-e3f128140e39" alt="Vaizdas" width="600"/>
 
+
 + Tikrinama, ar nvm įdiegta. Matome įdiegtą nvm versiją.
 <img src="https://github.com/user-attachments/assets/997a6c58-2aab-4af8-b0ef-539caeabab9c" alt="Vaizdas" width="600"/>
-+ 
 
+
++ Instaliuojame Node.js 18 versiją su nvm.
+'''
+C:\Users\JV>nvm --version
+1.1.12
+
+C:\Users\JV>nvm install 18
+Downloading node.js version 18.20.5 (64-bit)...
+Extracting node and npm...
+Complete
+npm v10.8.2 installed successfully.
+
+
+Installation complete. If you want to use this version, type
+
+nvm use 18.20.5
+'''
+
+
++ Pakeičiame, kad naudotume šią versiją.
+'''
+C:\Users\JV>nvm use 18
+Now using node v18.20.5 (64-bit)
+'''
 
