@@ -173,9 +173,6 @@ Web3.js v1.10.0
 
 <img src="https://github.com/user-attachments/assets/16b87dc7-ecde-47ee-960b-2aa66cdc8ae7" alt="Vaizdas" width="600"/>
 
-2. Pačiame Sublime Text reikia atlikti šiuos žingsnius
-
-<img src="https://github.com/user-attachments/assets/ee7e0706-f9d1-4590-9cb1-5bf74f089512" alt="Vaizdas" width="600"/>
 
 ### Sublime Text "Ethereum" paketo diegimas
 
@@ -185,7 +182,9 @@ Web3.js v1.10.0
 
 <img src="https://github.com/user-attachments/assets/609b06f0-5437-477f-9219-11edb1b40718" alt="Vaizdas" width="600"/>
 
-2. 
+2. Pačiame Sublime Text reikia atlikti šiuos žingsnius
+
+<img src="https://github.com/user-attachments/assets/ee7e0706-f9d1-4590-9cb1-5bf74f089512" alt="Vaizdas" width="600"/>
 ## Atliktos užduotys
 
 # I6ma
