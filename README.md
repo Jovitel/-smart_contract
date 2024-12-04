@@ -80,7 +80,7 @@ atsižvelgiant į turimą laiką, patirtį ir galimybes.
 
 + https://livebook.manning.com/book/building-ethereum-dapps/about-this-book/
 
-## Diegimai
+## DIEGIMAI
 
 ### Truffle IDE diegimas
 
@@ -185,6 +185,31 @@ Web3.js v1.10.0
 2. Pačiame Sublime Text reikia atlikti šiuos žingsnius
 
 <img src="https://github.com/user-attachments/assets/ee7e0706-f9d1-4590-9cb1-5bf74f089512" alt="Vaizdas" width="600"/>
-## Atliktos užduotys
 
-# I6ma
+## ATLIKTOS UŽDUOTYS
+
+### Išmaniosios sutarties verslo modelio logika
+
+Nusprendžiau naudoti prenumeratos verslo modelį **(Subscription model)** - prenumeratos pagrindu veikiantys verslai, kuriuose vartotojai moka nuolatinį mokestį už paslaugas arba prekes.
+
+Taigi sukūriau „Jovi Store“. „Jovi Store“ siūlo prenumeratos paslaugą, per kurią galite reguliariai gauti aukščiausios kokybės rankų darbo papuošalus, žvakes, smilkalus ir kitas prekes namams, tiesiai į savo namus pagal savo pasirinkimus.
+
+**Dalyvaujančios šalys:**
+
++ Pirkėjas (Prenumeratorius): Užsisako prenumeratą ir atlieka mokėjimą.
+
++ Pardavėjas (Jovi Store): Teikia paslaugą – siunčia naujienlaiškius pagal prenumeratą.
+
++ Kurjeris: Atsakingas už prekių pristatymą pirkėjui.
+
+**Išmanioji sutartis:**
+
+Užtikrina mokėjimo ir paslaugos teikimo sąlygas be tarpininkų, užfiksuoja pirkimo istoriją ir naujienlaiškių pristatymą.
+
+**Logika**
+
++ Pirkėjas pasirašo sutartį su pardavėju dėl prenumeratos.
+  
++ Pirkėjas moka už mėnesinę prenumeratą, o sutartis užtikrina, kad naujienlaiškiai būtų siunčiami per susitartą laikotarpį.
+
++ Išmanioji sutartis užtikrina, kad prekeivis gaus mokėjimus ir vykdys paslaugą, nes sutartis gali automatiškai sustabdyti pristatymą, jei mokėjimas nebus atliktas.
