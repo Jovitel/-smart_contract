@@ -80,5 +80,19 @@ atsižvelgiant į turimą laiką, patirtį ir galimybes.
 
 + https://livebook.manning.com/book/building-ethereum-dapps/about-this-book/
 
+## Truffle IDE diegimas
+
+1. Reikia instaliuoti Node.js ir npm.
+<img src="https://github.com/user-attachments/assets/9b54d31a-48d9-4f23-a0aa-61425522318e" alt="Vaizdas" width="300"/>
+
++  Tam naudojama Node Version Manager (nvm). Todėl parsisiunčiama nvm is https://github.com/coreybutler/nvm-windows/releases
+<img src="https://github.com/user-attachments/assets/169241f8-145c-4627-a428-7dabd43f91a9" alt="Vaizdas" width="300"/>
+
++ Atsisiunčiau nvm-setup.zip (diegimo failą) ir jį paleidau nvm-setup.exe
+<img src="https://github.com/user-attachments/assets/b12f0703-2670-4a15-acf4-e3f128140e39" alt="Vaizdas" width="300"/>
+
++ Tikrinama, ar nvm įdiegta. Matome įdiegtą nvm versiją.
+<img src="https://github.com/user-attachments/assets/997a6c58-2aab-4af8-b0ef-539caeabab9c" alt="Vaizdas" width="300"/>
++ 
 
 
