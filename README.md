@@ -173,43 +173,36 @@ Web3.js v1.10.0
 
 <img src="https://github.com/user-attachments/assets/16b87dc7-ecde-47ee-960b-2aa66cdc8ae7" alt="Vaizdas" width="600"/>
 
-
-### Sublime Text "Ethereum" paketo diegimas
-
-Šis paketas palengvina išmaniųjų sutarčių kūrimą Ethereum tinkle. Jis suteikia naudingų funkcijų, tokių kaip sintaksės paryškinimas ir kodo šablonai, kurie supaprastina programavimą su Solidity kalba. Tai padeda kūrėjams efektyviau dirbti kuriant decentralizuotas programas (dApps) Ethereum tinkle.
-
-1. https://packagecontrol.io/packages/Ethereum parsisiunčiam Ethereum paketą.
-
-<img src="https://github.com/user-attachments/assets/609b06f0-5437-477f-9219-11edb1b40718" alt="Vaizdas" width="600"/>
-
-2. Pačiame Sublime Text reikia atlikti šiuos žingsnius
-
-<img src="https://github.com/user-attachments/assets/ee7e0706-f9d1-4590-9cb1-5bf74f089512" alt="Vaizdas" width="600"/>
-
 ## ATLIKTOS UŽDUOTYS
 
 ### Išmaniosios sutarties verslo modelio logika
 
-Nusprendžiau naudoti prenumeratos verslo modelį **(Subscription model)** - prenumeratos pagrindu veikiantys verslai, kuriuose vartotojai moka nuolatinį mokestį už paslaugas arba prekes.
+Nusprendžiau naudoti **(B2C (Business to Consumer))** verslo modelį - įmonės prekiauja tiesiogiai su vartotojais.
 
-Taigi sukūriau „Jovi Store“. „Jovi Store“ siūlo prenumeratos paslaugą, per kurią galite reguliariai gauti aukščiausios kokybės rankų darbo papuošalus, žvakes, smilkalus ir kitas prekes namams, tiesiai į savo namus pagal savo pasirinkimus.
+Taigi sukūriau „Jovi Store“. Jovi store tai internetinė parduotuvė, kurioje galima įsigyti aukščiausios kokybės, rankų darbo papuošalų, žvakių, smilkalų bei prekių namams.
 
 **Dalyvaujančios šalys:**
 
-+ Pirkėjas (Prenumeratorius): Užsisako prenumeratą ir atlieka mokėjimą.
++ Pirkėjas: Išsirenka prekę ir atlieka mokėjimą.
 
-+ Pardavėjas (Jovi Store): Teikia paslaugą – siunčia naujienlaiškius pagal prenumeratą.
++ Pardavėjas (Jovi Store): Teikia prekes ir užtikrina aukštą aptarnavimo kokybę.
 
 + Kurjeris: Atsakingas už prekių pristatymą pirkėjui.
 
 **Išmanioji sutartis:**
 
-Užtikrina mokėjimo ir paslaugos teikimo sąlygas be tarpininkų, užfiksuoja pirkimo istoriją ir naujienlaiškių pristatymą.
++ Automatizuoja užsakymo vykdymą ir mokėjimo procesą.
+
++ Užtikrina, kad prekės bus pristatytos tik gavus apmokėjimą.
+
++ Sekama užsakymo būsena (gamyba, išsiuntimas, pristatymas).
 
 **Logika**
 
-+ Pirkėjas pasirašo sutartį su pardavėju dėl prenumeratos.
++ Pirkėjas pateikia užsakymą ir atlieka mokėjimą per išmaniąją sutartį.
   
-+ Pirkėjas moka už mėnesinę prenumeratą, o sutartis užtikrina, kad naujienlaiškiai būtų siunčiami per susitartą laikotarpį.
-
-+ Išmanioji sutartis užtikrina, kad prekeivis gaus mokėjimus ir vykdys paslaugą, nes sutartis gali automatiškai sustabdyti pristatymą, jei mokėjimas nebus atliktas.
++ Pardavėjas gauna užsakymą ir pradeda vykdymą.
+  
++ Kai prekė perduodama kurjeriui, sutartis seka jos pristatymo eigą.
+  
+Po pristatymo lėšos išleidžiamos pardavėjui, užtikrinant pirkėjo ir pardavėjo saugumą.
