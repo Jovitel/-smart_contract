@@ -84,6 +84,9 @@ atsižvelgiant į turimą laiką, patirtį ir galimybes.
 
 ### Truffle IDE diegimas
 
+Truffle yra populiari kūrimo aplinka ir įrankių rinkinys, skirtas „Ethereum“ 
+ir kitoms blockchain platformoms. Jis leidžia kurti, testuoti ir diegti išmaniąsias sutartis.
+
 1. Reikia instaliuoti Node.js ir npm.
 <img src="https://github.com/user-attachments/assets/9b54d31a-48d9-4f23-a0aa-61425522318e" alt="Vaizdas" width="600"/>
 
@@ -158,6 +161,8 @@ Web3.js v1.10.0
 ```
 ### MetaMask diegimas
 
+MetaMask yra populiari naršyklės plėtinys ir piniginė, skirta Ethereum ir kitoms blockchain platformoms. Ji leidžia vartotojams saugiai valdyti savo kriptovaliutas, interaktyviai naudotis decentralizuotomis programomis (dApps) ir sąveikauti su išmaniosiomis sutartimis. MetaMask užtikrina, kad vartotojai galėtų pasirašyti transakcijas, naudoti savo kriptovaliutas ir saugiai prisijungti prie blockchain paslaugų, kaip, pavyzdžiui, decentralizuotos finansų paslaugos ar NFT platformos.
+
 1. ,,Chrome" internetinėje parduotuvėje įsidiegiau MetaMask.
 
 <img src="https://github.com/user-attachments/assets/27b795e7-bd78-4e45-acf9-0d6ac020fdba" alt="Vaizdas" width="600"/>
@@ -168,6 +173,8 @@ Web3.js v1.10.0
 <img src="https://github.com/user-attachments/assets/3d05c241-69d3-4210-84d5-2832d01c99de" alt="Vaizdas" width="600"/>
 
 ### Ganache diegimas
+
+Ganache yra įrankis, skirtas Ethereum kūrėjams, leidžiantis sukurti vietinį blockchain tinklą, skirtą išmaniųjų sutarčių testavimui. Tai padeda testuoti ir kurti decentralizuotas programas (dApps) be poreikio naudoti tikrą Ethereum tinklą, todėl kūrimas tampa greitesnis ir pigesnis. Ganache pateikia virtualų Ethereum blokų grandinės tinklą, kuriame galima atlikti transakcijas, patikrinti išmaniąsias sutartis ir patikrinti, kaip jos veiks realiame tinkle.
 
 1. https://archive.trufflesuite.com/ganache/ parsisiunčiame
 
@@ -205,4 +212,4 @@ Taigi sukūriau „Jovi Store“. Jovi store tai internetinė parduotuvė, kurio
   
 + Kai prekė perduodama kurjeriui, sutartis seka jos pristatymo eigą.
   
-Po pristatymo lėšos išleidžiamos pardavėjui, užtikrinant pirkėjo ir pardavėjo saugumą.
++ Po pristatymo lėšos išleidžiamos pardavėjui, užtikrinant pirkėjo ir pardavėjo saugumą.
