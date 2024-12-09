@@ -483,13 +483,47 @@ compilers: {
 ```
 **- - - - - - - - - - - - - - -**
 
-4. 
+4. Atliekamas testavimas
+
+```
+truffle test
+```
+Gaunama:
+```
+C:\Users\JV\smart_contract>truffle test
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\JoviStore.sol
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to C:\Users\JV\AppData\Local\Temp\test--22356-cLTmWlxsCi7W
+> Compiled successfully using:
+   - solc: 0.8.13+commit.abaa5c0e.Emscripten.clang
+Deploying Migrations...
+Migrations deployed successfully.
+
+
+  Contract: JoviStore
+    √ should deploy contract
+    √ should allow buyer to pay (40ms)
+    √ should allow seller to assign courier (42ms)
+    √ should allow courier to confirm delivery (83ms)
+    √ should release payment when delivered (114ms)
+
+
+  5 passing (635ms)
+
+```
 
 **SVARBU**
 + Naudojami adresai, kuriuos priskiriam, turi būti paimti iš "Ganache", o "Ganache" galima susieti su "MetaLab".
 
 + truffle-config.js reikia susieti su "Ganache" nustatymais.
-  
+
+
+```
 networks: {
   development: {
     host: "127.0.0.1",
@@ -497,6 +531,8 @@ networks: {
     network_id: "*", // Match any network id
   }
 }
+
+```
 
 **Ethereum testiniame tinkle ():**
 
