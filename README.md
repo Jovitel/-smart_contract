@@ -209,8 +209,133 @@ Po pristatymo lėšos išleidžiamos pardavėjui, užtikrinant pirkėjo ir parda
 
 ### 2.  Verslo logika išmanioje sutartyje Solidyti kalba.
 
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract JoviStore {
+    address public seller;
+    address public buyer;
+    address public courier;
+    uint public price;
+    bool public paid = false;
+    bool public delivered = false;
+
+    constructor(address _seller, address _buyer, uint _price) {
+        require(_seller != address(0), "Seller address cannot be zero");
+        require(_buyer != address(0), "Buyer address cannot be zero");
+        require(_price > 0, "Price must be greater than zero");
+
+        seller = _seller;
+        buyer = _buyer;
+        price = _price;
+    }
+
+    function pay() public payable {
+        require(msg.sender == buyer, "Only the buyer can pay");
+        require(msg.value == price, "Incorrect payment amount");
+        require(!paid, "Payment already made");
+
+        paid = true;
+    }
+
+    function assignCourier(address _courier) public {
+        require(msg.sender == seller, "Only seller can assign a courier");
+        require(_courier != address(0), "Courier address cannot be zero");
+
+        courier = _courier;
+    }
+
+    function confirmDelivery() public {
+        require(msg.sender == courier, "Only the courier can confirm delivery");
+        require(paid, "Payment has not been made");
+
+        delivered = true;
+    }
+
+    function releasePayment() public {
+        require(msg.sender == seller, "Only the seller can release payment");
+        require(paid, "Payment has not been made");
+        require(delivered, "Goods have not been delivered");
+
+        payable(seller).transfer(price);
+    }
+}
+
+```
+**Funkcijos:**
+
++ Apmokėjimas: Pirkėjas gali atlikti mokėjimą tik tada, kai jis pateikia teisingą sumą, o mokėjimas pažymimas kaip atliktas.
+
++ Kurjerio priskyrimas: Pardavėjas gali priskirti kurjerį.
+
++ Pristatymo patvirtinimas: Kurjeris patvirtina, kad pristatymas įvyko.
+
++ Mokėjimo atlaisvinimas: Pardavėjas gauna mokėjimą, jei pristatymas patvirtintas.
+
 
 ### 3. Išmaniosios sutarties testavimas
+
+1. CMD norimoje kompiuterio vietoje susikūriau naują projektą.
+
+```
+truffle init
+```
+
+2. Pasirinktame aplankale atsirado 3 failai: contracts, migrations, test. Juose sukūriau šiuos failus:
+
+**Contracts:** JoviStore.sol, Migrations.sol
+
+<img src="https://github.com/user-attachments/assets/87a500a9-642b-4408-b252-1664ce4370e6" alt="Vaizdas" width="600"/>
+
+
+**Migrations** 1_initial_migration.js, 2_deploy_contracts.js
+
+<img src="https://github.com/user-attachments/assets/1299cd41-1418-45d1-87f6-6fa22d680fdc" alt="Vaizdas" width="600"/>
+
+
+**Test** myContract.test.js
+
+<img src="https://github.com/user-attachments/assets/11e6f9f5-acce-4354-9802-3b2f34c6b0a7" alt="Vaizdas" width="600"/>
+
+**Apie failus**
+
+*JoviStore.sol:*
+
++ Tai išmaniosios sutarties failas, parašytas Solidity kalba.
+
++ Veikia kaip pagrindinė „blockchain“ aplikacijos logikos dalis.
+
+  
+*Migrations.sol:*
+
++ Tai pagalbinė sutartis, naudojama „Truffle“ diegimo valdymui.
+  
++ Sekama, kurios migracijos jau atliktos, kad būtų išvengta pasikartojimų.
+
+  
+*1_initial_migration.js:*
+
++ Atsakingas už „Migrations“ sutarties diegimą.
+
++ Pirmasis žingsnis migracijų procese, užtikrinantis, kad migracijų valdymas yra inicijuotas.
+
+  
+*2_deploy_contracts.js:*
+
++ Naudojamas „JoviStore“ sutarties diegimui į „blockchain“ tinklą.
+
++ Apima adresų ir parametrų perdavimą sutarties konstruktoriui.
+
+  
+*myContract.test.js:*
+
++ Testavimo failas, parašytas „JavaScript“, skirtas „Truffle“ testavimo sistemai.
+
++ Patikrina išmaniosios sutarties funkcionalumą, pvz., apmokėjimą, kurjerio priskyrimą ir mokėjimo atlaisvinimą.
+
+
+3. 
 
 **Ethereum lokaliame tinkle (Ganache):**
 
