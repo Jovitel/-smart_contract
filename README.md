@@ -276,6 +276,8 @@ contract JoviStore {
 
 ### 3. Išmaniosios sutarties testavimas
 
+**Ethereum lokaliame tinkle (Ganache):**
+
 1. CMD norimoje kompiuterio vietoje susikūriau naują projektą.
 
 ```
@@ -330,14 +332,171 @@ truffle init
   
 *myContract.test.js:*
 
-+ Testavimo failas, parašytas „JavaScript“, skirtas „Truffle“ testavimo sistemai.
++ *Testavimo failas*, parašytas „JavaScript“, skirtas „Truffle“ testavimo sistemai.
 
 + Patikrina išmaniosios sutarties funkcionalumą, pvz., apmokėjimą, kurjerio priskyrimą ir mokėjimo atlaisvinimą.
 
+3. Atliekamas migracijos procesas, kuriame diegiamos išmaniosios sutartys.
 
-3. 
+```
+truffle migrate --network development --reset
+```
 
-**Ethereum lokaliame tinkle (Ganache):**
+Gaunama:
+
+```
+C:\Users\JV\smart_contract>truffle migrate --network development --reset
+
+Compiling your contracts...
+√ Fetching solc version list from solc-bin. Attempt #1
+√ Downloading compiler. Attempt #1.
+> Compiling .\contracts\JoviStore.sol
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to C:\Users\JV\smart_contract\build\contracts
+> Compiled successfully using:
+   - solc: 0.8.13+commit.abaa5c0e.Emscripten.clang
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      1337
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+Deploying Migrations...
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xe52facb76b91a5ef84b669a53485a3dad2d407842967dc26de23ea5ce1c04518
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x923b1F24378A96e1b245962b6606195671f821f6
+   > block number:        6
+   > block timestamp:     1733770792
+   > account:             0x13d70Da74EC590e57cD25a1fcfd75257FE91D477
+   > balance:             99.4572394
+   > gas used:            250130 (0x3d112)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0050026 ETH
+
+Migrations deployed successfully.
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0050026 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'JoviStore'
+   ---------------------
+   > transaction hash:    0x148b6bc446e88538d379fad7cf3139e61c1148fe40e1e494c91ff39217248c7c
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x693D28d3912ec8a1704AA9d398e9447e178A7142
+   > block number:        8
+   > block timestamp:     1733770792
+   > account:             0x13d70Da74EC590e57cD25a1fcfd75257FE91D477
+   > balance:             99.4390458
+   > gas used:            863767 (0xd2e17)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01727534 ETH
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.01727534 ETH
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.02227794 ETH
+
+```
+
+**- - - - - - - - - - - - - - -**
+
+Šiame etape ilgam užstrigau su klaida:
+
+```
+C:\Users\JV\smart_contract>truffle migrate --network development --reset
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\JoviStore.sol
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to C:\Users\JV\smart_contract\build\contracts
+> Compiled successfully using:
+   - solc: 0.8.21+commit.d9974bed.Emscripten.clang
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      1337
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+ *** Deployment Failed ***
+
+"Migrations" hit an invalid opcode while deploying. Try:
+   * Verifying that your constructor params satisfy all assert conditions.
+   * Verifying your constructor code doesn't access an array out of bounds.
+   * Adding reason strings to your assert statements.
+
+
+Exiting: Review successful transactions manually by checking the transaction hashes above on Etherscan.
+
+
+Error:  *** Deployment Failed ***
+
+"Migrations" hit an invalid opcode while deploying. Try:
+   * Verifying that your constructor params satisfy all assert conditions.
+   * Verifying your constructor code doesn't access an array out of bounds.
+   * Adding reason strings to your assert statements.
+
+    at C:\Users\JV\AppData\Roaming\nvm\v18.20.5\node_modules\truffle\build\webpack:\packages\deployer\src\deployment.js:330:1
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+Truffle v5.11.5 (core: 5.11.5)
+Node v18.20.5
+```
+
+Išbandžiau skirtingus dalykus, tačiau internete radau, jog kiti žmonės irgi buvo susidūrę su šia klaida.
+
+Reikėjo truffle-config.js faile solc versiją pakeisti į 0.8.13 iš 0.8.21
+
+```
+compilers: {
+    solc: {
+      version: "0.8.13"
+    }
+  }
+```
+**- - - - - - - - - - - - - - -**
+
+4. 
+
+**SVARBU**
++ Naudojami adresai, kuriuos priskiriam, turi būti paimti iš "Ganache", o "Ganache" galima susieti su "MetaLab".
+
++ truffle-config.js reikia susieti su "Ganache" nustatymais.
+  
+networks: {
+  development: {
+    host: "127.0.0.1",
+    port: 8545,
+    network_id: "*", // Match any network id
+  }
+}
 
 **Ethereum testiniame tinkle ():**
 
