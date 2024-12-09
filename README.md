@@ -534,7 +534,7 @@ networks: {
 
 ```
 
-**Ethereum testiniame tinkle ():**
+**Ethereum testiniame tinkle (Georli):**
 
 ### 4. Išmaniosios sutarties vykdymo "logų" peržiūra, naudojant Ethereum testinį tinklą Etherscan
 
