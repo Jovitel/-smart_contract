@@ -175,7 +175,7 @@ Web3.js v1.10.0
 
 ## ATLIKTOS UŽDUOTYS
 
-### Išmaniosios sutarties verslo modelio logika
+### 1. Išmaniosios sutarties verslo modelio logika
 
 Nusprendžiau naudoti **(B2C (Business to Consumer))** verslo modelį - įmonės prekiauja tiesiogiai su vartotojais.
 
@@ -206,3 +206,16 @@ Taigi sukūriau „Jovi Store“. Jovi store tai internetinė parduotuvė, kurio
 + Kai prekė perduodama kurjeriui, sutartis seka jos pristatymo eigą.
   
 Po pristatymo lėšos išleidžiamos pardavėjui, užtikrinant pirkėjo ir pardavėjo saugumą.
+
+### 2.  Verslo logika išmanioje sutartyje Solidyti kalba.
+
+
+### 3. Išmaniosios sutarties testavimas
+
+**Ethereum lokaliame tinkle (Ganache):**
+
+**Ethereum testiniame tinkle ():**
+
+### 4. Išmaniosios sutarties vykdymo "logų" peržiūra, naudojant Ethereum testinį tinklą Etherscan
+
+### 5. Decentralizuotos aplikacijos Front-End'as (tinklapis), įgalinantis bendradarbiavimą su išmaniąja sutartimi
