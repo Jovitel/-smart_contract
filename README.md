@@ -567,7 +567,7 @@ Vykdant transakcijas, jas reikia patvirtinti "MetaMask"
 <img src="https://github.com/user-attachments/assets/0aeecb8a-1528-4a34-baa0-741d42f265c6" alt="Vaizdas" width="200"/>
 
 
-### 4. Išmaniosios sutarties vykdymo "logų" peržiūra, naudojant Ethereum testinį tinklą Etherscan
+### 4. Išmaniosios sutarties vykdymo "logų" peržiūra, naudojant Ethereum testinio tinklo Etherscan 
 
 Tam, kad pamatyti "logus" naudojau https://holesky.etherscan.io/ , Etherscan skirtą Holešky tinklui.
 
