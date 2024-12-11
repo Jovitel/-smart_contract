@@ -584,20 +584,20 @@ Sukūriau svetainę:
 
 Pagrindinis puslapis:
 
-<img src="https://github.com/user-attachments/assets/e34b7247-5563-4d2d-ac9c-3ca845c5914f" alt="Vaizdas" width="600"/>
+<img src="https://github.com/user-attachments/assets/e34b7247-5563-4d2d-ac9c-3ca845c5914f" alt="Vaizdas" width="700"/>
 
-<img src="https://github.com/user-attachments/assets/0d3e9864-ca84-40e1-a269-5f6f35737ef0" alt="Vaizdas" width="600"/>
+<img src="https://github.com/user-attachments/assets/0d3e9864-ca84-40e1-a269-5f6f35737ef0" alt="Vaizdas" width="700"/>
 
 Paspaudus mygtuką "Papuošalai" atsirandame kitam puslapyje, papuošalų skiltyje
 
 Skiltis "Papuošalai":
 
-<img src="https://github.com/user-attachments/assets/d2db1b53-5f63-410f-ba3a-a0dd18adfb2a" alt="Vaizdas" width="600"/>
+<img src="https://github.com/user-attachments/assets/d2db1b53-5f63-410f-ba3a-a0dd18adfb2a" alt="Vaizdas" width="700"/>
 
-<img src="https://github.com/user-attachments/assets/37740ff4-cd7a-4a93-9138-c84fa73df1d4" alt="Vaizdas" width="600"/>
+<img src="https://github.com/user-attachments/assets/37740ff4-cd7a-4a93-9138-c84fa73df1d4" alt="Vaizdas" width="700"/>
 
-<img src="https://github.com/user-attachments/assets/b8b2eecd-18c5-40d3-b368-02dad07abc49" alt="Vaizdas" width="600"/>
+<img src="https://github.com/user-attachments/assets/b8b2eecd-18c5-40d3-b368-02dad07abc49" alt="Vaizdas" width="700"/>
 
 Paspaudus pirkti atsiranda lentelė, kurioje reikėtų paspausti patvirtinti ir turi veikti išmanioji sutartis, tačiau man to padaryti nepavyko, gaunu klaidą.
 
-<img src="https://github.com/user-attachments/assets/b295bffc-491f-40a1-a083-ac126e333292" alt="Vaizdas" width="600"/>
+<img src="https://github.com/user-attachments/assets/b295bffc-491f-40a1-a083-ac126e333292" alt="Vaizdas" width="700"/>
