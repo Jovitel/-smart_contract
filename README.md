@@ -583,6 +583,7 @@ Tam, kad pamatyti "logus" naudojau https://holesky.etherscan.io/ , Etherscan ski
 Sukūriau svetainę:
 
 Pagrindinis puslapis:
+
 <img src="https://github.com/user-attachments/assets/e34b7247-5563-4d2d-ac9c-3ca845c5914f" alt="Vaizdas" width="600"/>
 
 <img src="https://github.com/user-attachments/assets/0d3e9864-ca84-40e1-a269-5f6f35737ef0" alt="Vaizdas" width="600"/>
@@ -590,6 +591,7 @@ Pagrindinis puslapis:
 Paspaudus mygtuką "Papuošalai" atsirandame kitam puslapyje, papuošalų skiltyje
 
 Skiltis "Papuošalai":
+
 <img src="https://github.com/user-attachments/assets/d2db1b53-5f63-410f-ba3a-a0dd18adfb2a" alt="Vaizdas" width="600"/>
 
 <img src="https://github.com/user-attachments/assets/37740ff4-cd7a-4a93-9138-c84fa73df1d4" alt="Vaizdas" width="600"/>
