@@ -554,8 +554,7 @@ networks: {
 
 3. Naudojau Remix IDE. "Deploy & Run Transactions" nustačiau tokius nustatymus:
 
-<img src="https://github.com/user-attachments/assets/9ec61a82-004c-493b-9b59-e3cf475063a9" alt="Vaizdas" width="600"/>
-
+<img src="https://github.com/user-attachments/assets/9ec61a82-004c-493b-9b59-e3cf475063a9" alt="Vaizdas" width="200"/>
 
 "Deploy"
 
