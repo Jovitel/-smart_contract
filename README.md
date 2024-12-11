@@ -558,7 +558,7 @@ networks: {
 
 "Deploy"
 
-<img src="https://github.com/user-attachments/assets/dc6a4c61-c46f-499f-b2f8-22d4cf651c9d" alt="Vaizdas" width="500"/>
+<img src="https://github.com/user-attachments/assets/dc6a4c61-c46f-499f-b2f8-22d4cf651c9d" alt="Vaizdas" width="700"/>
 
 Vykdant transakcijas, jas reikia patvirtinti "MetaMask"
 
