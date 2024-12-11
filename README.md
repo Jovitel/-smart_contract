@@ -84,9 +84,6 @@ atsižvelgiant į turimą laiką, patirtį ir galimybes.
 
 ### Truffle IDE diegimas
 
-Truffle yra populiari kūrimo aplinka ir įrankių rinkinys, skirtas „Ethereum“ 
-ir kitoms blockchain platformoms. Jis leidžia kurti, testuoti ir diegti išmaniąsias sutartis.
-
 1. Reikia instaliuoti Node.js ir npm.
 <img src="https://github.com/user-attachments/assets/9b54d31a-48d9-4f23-a0aa-61425522318e" alt="Vaizdas" width="600"/>
 
@@ -161,8 +158,6 @@ Web3.js v1.10.0
 ```
 ### MetaMask diegimas
 
-MetaMask yra populiari naršyklės plėtinys ir piniginė, skirta Ethereum ir kitoms blockchain platformoms. Ji leidžia vartotojams saugiai valdyti savo kriptovaliutas, interaktyviai naudotis decentralizuotomis programomis (dApps) ir sąveikauti su išmaniosiomis sutartimis. MetaMask užtikrina, kad vartotojai galėtų pasirašyti transakcijas, naudoti savo kriptovaliutas ir saugiai prisijungti prie blockchain paslaugų, kaip, pavyzdžiui, decentralizuotos finansų paslaugos ar NFT platformos.
-
 1. ,,Chrome" internetinėje parduotuvėje įsidiegiau MetaMask.
 
 <img src="https://github.com/user-attachments/assets/27b795e7-bd78-4e45-acf9-0d6ac020fdba" alt="Vaizdas" width="600"/>
@@ -174,15 +169,13 @@ MetaMask yra populiari naršyklės plėtinys ir piniginė, skirta Ethereum ir ki
 
 ### Ganache diegimas
 
-Ganache yra įrankis, skirtas Ethereum kūrėjams, leidžiantis sukurti vietinį blockchain tinklą, skirtą išmaniųjų sutarčių testavimui. Tai padeda testuoti ir kurti decentralizuotas programas (dApps) be poreikio naudoti tikrą Ethereum tinklą, todėl kūrimas tampa greitesnis ir pigesnis. Ganache pateikia virtualų Ethereum blokų grandinės tinklą, kuriame galima atlikti transakcijas, patikrinti išmaniąsias sutartis ir patikrinti, kaip jos veiks realiame tinkle.
-
 1. https://archive.trufflesuite.com/ganache/ parsisiunčiame
 
 <img src="https://github.com/user-attachments/assets/16b87dc7-ecde-47ee-960b-2aa66cdc8ae7" alt="Vaizdas" width="600"/>
 
 ## ATLIKTOS UŽDUOTYS
 
-### Išmaniosios sutarties verslo modelio logika
+### 1. Išmaniosios sutarties verslo modelio logika
 
 Nusprendžiau naudoti **(B2C (Business to Consumer))** verslo modelį - įmonės prekiauja tiesiogiai su vartotojais.
 
@@ -212,4 +205,375 @@ Taigi sukūriau „Jovi Store“. Jovi store tai internetinė parduotuvė, kurio
   
 + Kai prekė perduodama kurjeriui, sutartis seka jos pristatymo eigą.
   
-+ Po pristatymo lėšos išleidžiamos pardavėjui, užtikrinant pirkėjo ir pardavėjo saugumą.
+Po pristatymo lėšos išleidžiamos pardavėjui, užtikrinant pirkėjo ir pardavėjo saugumą.
+
+### 2.  Verslo logika išmanioje sutartyje Solidyti kalba.
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract JoviStore {
+    address public seller;
+    address public buyer;
+    address public courier;
+    uint public price;
+    bool public paid = false;
+    bool public delivered = false;
+
+    constructor(address _seller, address _buyer, uint _price) {
+        require(_seller != address(0), "Seller address cannot be zero");
+        require(_buyer != address(0), "Buyer address cannot be zero");
+        require(_price > 0, "Price must be greater than zero");
+
+        seller = _seller;
+        buyer = _buyer;
+        price = _price;
+    }
+
+    function pay() public payable {
+        require(msg.sender == buyer, "Only the buyer can pay");
+        require(msg.value == price, "Incorrect payment amount");
+        require(!paid, "Payment already made");
+
+        paid = true;
+    }
+
+    function assignCourier(address _courier) public {
+        require(msg.sender == seller, "Only seller can assign a courier");
+        require(_courier != address(0), "Courier address cannot be zero");
+
+        courier = _courier;
+    }
+
+    function confirmDelivery() public {
+        require(msg.sender == courier, "Only the courier can confirm delivery");
+        require(paid, "Payment has not been made");
+
+        delivered = true;
+    }
+
+    function releasePayment() public {
+        require(msg.sender == seller, "Only the seller can release payment");
+        require(paid, "Payment has not been made");
+        require(delivered, "Goods have not been delivered");
+
+        payable(seller).transfer(price);
+    }
+}
+
+```
+**Funkcijos:**
+
++ Apmokėjimas: Pirkėjas gali atlikti mokėjimą tik tada, kai jis pateikia teisingą sumą, o mokėjimas pažymimas kaip atliktas.
+
++ Kurjerio priskyrimas: Pardavėjas gali priskirti kurjerį.
+
++ Pristatymo patvirtinimas: Kurjeris patvirtina, kad pristatymas įvyko.
+
++ Mokėjimo atlaisvinimas: Pardavėjas gauna mokėjimą, jei pristatymas patvirtintas.
+
+
+### 3. Išmaniosios sutarties testavimas
+
+**Ethereum lokaliame tinkle (Ganache):**
+
+1. CMD norimoje kompiuterio vietoje susikūriau naują projektą.
+
+```
+truffle init
+```
+
+2. Pasirinktame aplankale atsirado 3 failai: contracts, migrations, test. Juose sukūriau šiuos failus:
+
+**Contracts:** JoviStore.sol, Migrations.sol
+
+<img src="https://github.com/user-attachments/assets/87a500a9-642b-4408-b252-1664ce4370e6" alt="Vaizdas" width="600"/>
+
+
+**Migrations** 1_initial_migration.js, 2_deploy_contracts.js
+
+<img src="https://github.com/user-attachments/assets/1299cd41-1418-45d1-87f6-6fa22d680fdc" alt="Vaizdas" width="600"/>
+
+
+**Test** myContract.test.js
+
+<img src="https://github.com/user-attachments/assets/11e6f9f5-acce-4354-9802-3b2f34c6b0a7" alt="Vaizdas" width="600"/>
+
+**Apie failus**
+
+*JoviStore.sol:*
+
++ Tai išmaniosios sutarties failas, parašytas Solidity kalba.
+
++ Veikia kaip pagrindinė „blockchain“ aplikacijos logikos dalis.
+
+  
+*Migrations.sol:*
+
++ Tai pagalbinė sutartis, naudojama „Truffle“ diegimo valdymui.
+  
++ Sekama, kurios migracijos jau atliktos, kad būtų išvengta pasikartojimų.
+
+  
+*1_initial_migration.js:*
+
++ Atsakingas už „Migrations“ sutarties diegimą.
+
++ Pirmasis žingsnis migracijų procese, užtikrinantis, kad migracijų valdymas yra inicijuotas.
+
+  
+*2_deploy_contracts.js:*
+
++ Naudojamas „JoviStore“ sutarties diegimui į „blockchain“ tinklą.
+
++ Apima adresų ir parametrų perdavimą sutarties konstruktoriui.
+
+  
+*myContract.test.js:*
+
++ *Testavimo failas*, parašytas „JavaScript“, skirtas „Truffle“ testavimo sistemai.
+
++ Patikrina išmaniosios sutarties funkcionalumą, pvz., apmokėjimą, kurjerio priskyrimą ir mokėjimo atlaisvinimą.
+
+3. Atliekamas migracijos procesas, kuriame diegiamos išmaniosios sutartys.
+
+```
+truffle migrate --network development --reset
+```
+
+Gaunama:
+
+```
+C:\Users\JV\smart_contract>truffle migrate --network development --reset
+
+Compiling your contracts...
+√ Fetching solc version list from solc-bin. Attempt #1
+√ Downloading compiler. Attempt #1.
+> Compiling .\contracts\JoviStore.sol
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to C:\Users\JV\smart_contract\build\contracts
+> Compiled successfully using:
+   - solc: 0.8.13+commit.abaa5c0e.Emscripten.clang
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      1337
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+Deploying Migrations...
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xe52facb76b91a5ef84b669a53485a3dad2d407842967dc26de23ea5ce1c04518
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x923b1F24378A96e1b245962b6606195671f821f6
+   > block number:        6
+   > block timestamp:     1733770792
+   > account:             0x13d70Da74EC590e57cD25a1fcfd75257FE91D477
+   > balance:             99.4572394
+   > gas used:            250130 (0x3d112)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0050026 ETH
+
+Migrations deployed successfully.
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0050026 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'JoviStore'
+   ---------------------
+   > transaction hash:    0x148b6bc446e88538d379fad7cf3139e61c1148fe40e1e494c91ff39217248c7c
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x693D28d3912ec8a1704AA9d398e9447e178A7142
+   > block number:        8
+   > block timestamp:     1733770792
+   > account:             0x13d70Da74EC590e57cD25a1fcfd75257FE91D477
+   > balance:             99.4390458
+   > gas used:            863767 (0xd2e17)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01727534 ETH
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.01727534 ETH
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.02227794 ETH
+
+```
+
+**- - - - - - - - - - - - - - -**
+
+Šiame etape ilgam užstrigau su klaida:
+
+```
+C:\Users\JV\smart_contract>truffle migrate --network development --reset
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\JoviStore.sol
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to C:\Users\JV\smart_contract\build\contracts
+> Compiled successfully using:
+   - solc: 0.8.21+commit.d9974bed.Emscripten.clang
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      1337
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+ *** Deployment Failed ***
+
+"Migrations" hit an invalid opcode while deploying. Try:
+   * Verifying that your constructor params satisfy all assert conditions.
+   * Verifying your constructor code doesn't access an array out of bounds.
+   * Adding reason strings to your assert statements.
+
+
+Exiting: Review successful transactions manually by checking the transaction hashes above on Etherscan.
+
+
+Error:  *** Deployment Failed ***
+
+"Migrations" hit an invalid opcode while deploying. Try:
+   * Verifying that your constructor params satisfy all assert conditions.
+   * Verifying your constructor code doesn't access an array out of bounds.
+   * Adding reason strings to your assert statements.
+
+    at C:\Users\JV\AppData\Roaming\nvm\v18.20.5\node_modules\truffle\build\webpack:\packages\deployer\src\deployment.js:330:1
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+Truffle v5.11.5 (core: 5.11.5)
+Node v18.20.5
+```
+
+Išbandžiau skirtingus dalykus, tačiau internete radau, jog kiti žmonės irgi buvo susidūrę su šia klaida.
+
+Reikėjo truffle-config.js faile solc versiją pakeisti į 0.8.13 iš 0.8.21
+
+```
+compilers: {
+    solc: {
+      version: "0.8.13"
+    }
+  }
+```
+**- - - - - - - - - - - - - - -**
+
+4. Atliekamas testavimas
+
+```
+truffle test
+```
+Gaunama:
+```
+C:\Users\JV\smart_contract>truffle test
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\JoviStore.sol
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to C:\Users\JV\AppData\Local\Temp\test--22356-cLTmWlxsCi7W
+> Compiled successfully using:
+   - solc: 0.8.13+commit.abaa5c0e.Emscripten.clang
+Deploying Migrations...
+Migrations deployed successfully.
+
+
+  Contract: JoviStore
+    √ should deploy contract
+    √ should allow buyer to pay (40ms)
+    √ should allow seller to assign courier (42ms)
+    √ should allow courier to confirm delivery (83ms)
+    √ should release payment when delivered (114ms)
+
+
+  5 passing (635ms)
+
+```
+
+**SVARBU**
++ Naudojami adresai, kuriuos priskiriam, turi būti paimti iš "Ganache", o "Ganache" galima susieti su "MetaMask".
+
++ truffle-config.js reikia susieti su "Ganache" nustatymais.
+
+
+```
+networks: {
+  development: {
+    host: "127.0.0.1",
+    port: 8545,
+    network_id: "*", // Match any network id
+  }
+}
+
+```
+
+**Ethereum testiniame tinkle (Holešky):**
+
+1. Prisijungiau "MetaMask" prie norimo tinklo. Iš pradžių bandžiau prijungti Goerli, tačiau nepavyko.
+
+  Vėliau "MetaMask Support" https://support.metamask.io/networks-and-sidechains/eth-on-testnets/ perskaičiau, kad po Dencun tinklo atnaujinimo Goerli testinis tinklas buvo oficialiai nutrauktas. 
+
+<img src="https://github.com/user-attachments/assets/a909a962-a2d2-487e-8712-abd210633f13" alt="Vaizdas" width="600"/>
+
+  Bandžiau naudoti Sepolia, tačiau norint pasipildyti piniginę, neradau tam tinkamos nemokamos vietos. 
+
+  Taigi toliau naudojau Holešky.
+
+2. Pasipildžiau piniginę. Naudojau "Cloud Google Web3". https://cloud.google.com/application/web3/faucet/ethereum/holesky
+
+<img src="https://github.com/user-attachments/assets/9836fc3b-002d-40ed-a195-1f6a6c90db01" alt="Vaizdas" width="600"/>
+
+Įrašiau adresą to accounto, į kurį norėjau gauti ETH.
+
+3. Naudojau Remix IDE. "Deploy & Run Transactions" nustačiau tokius nustatymus:
+
+<img src="https://github.com/user-attachments/assets/c3bf3695-3adb-4bcb-ba5d-37534ef4d495" alt="Vaizdas" width="200"/>
+
+<img src="https://github.com/user-attachments/assets/9ec61a82-004c-493b-9b59-e3cf475063a9" alt="Vaizdas" width="200"/>
+
+"Deploy"
+
+<img src="https://github.com/user-attachments/assets/dc6a4c61-c46f-499f-b2f8-22d4cf651c9d" alt="Vaizdas" width="700"/>
+
+Vykdant transakcijas, jas reikia patvirtinti "MetaMask"
+
+<img src="https://github.com/user-attachments/assets/0aeecb8a-1528-4a34-baa0-741d42f265c6" alt="Vaizdas" width="200"/>
+
+
+### 4. Išmaniosios sutarties vykdymo "logų" peržiūra, naudojant Ethereum testinio tinklo Etherscan 
+
+Tam, kad pamatyti "logus" naudojau https://holesky.etherscan.io/ , Etherscan skirtą Holešky tinklui.
+
+Įvedžiau atliktos transakcijos hash:
+
+<img src="https://github.com/user-attachments/assets/b06e4161-8fc3-4acf-af46-cd450d7ded6a" alt="Vaizdas" width="600"/>
+
+
+### 5. Decentralizuotos aplikacijos Front-End'as (tinklapis), įgalinantis bendradarbiavimą su išmaniąja sutartimi
