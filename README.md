@@ -518,7 +518,7 @@ Migrations deployed successfully.
 ```
 
 **SVARBU**
-+ Naudojami adresai, kuriuos priskiriam, turi būti paimti iš "Ganache", o "Ganache" galima susieti su "MetaLab".
++ Naudojami adresai, kuriuos priskiriam, turi būti paimti iš "Ganache", o "Ganache" galima susieti su "MetaMask".
 
 + truffle-config.js reikia susieti su "Ganache" nustatymais.
 
@@ -536,9 +536,9 @@ networks: {
 
 **Ethereum testiniame tinkle (Holešky):**
 
-1. Prisijungiau "MetaLab" prie norimo tinklo. Iš pradžių bandžiau prijungti Goerli, tačiau nepavyko.
+1. Prisijungiau "MetaMask" prie norimo tinklo. Iš pradžių bandžiau prijungti Goerli, tačiau nepavyko.
 
-  Vėliau "MetaLab Support" https://support.metamask.io/networks-and-sidechains/eth-on-testnets/ perskaičiau, kad po Dencun tinklo atnaujinimo Goerli testinis tinklas buvo oficialiai nutrauktas. 
+  Vėliau "MetaMask Support" https://support.metamask.io/networks-and-sidechains/eth-on-testnets/ perskaičiau, kad po Dencun tinklo atnaujinimo Goerli testinis tinklas buvo oficialiai nutrauktas. 
 
 <img src="https://github.com/user-attachments/assets/a909a962-a2d2-487e-8712-abd210633f13" alt="Vaizdas" width="600"/>
 
