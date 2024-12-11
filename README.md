@@ -534,7 +534,38 @@ networks: {
 
 ```
 
-**Ethereum testiniame tinkle (Georli):**
+**Ethereum testiniame tinkle (Holešky):**
+
+1. Prisijungiau "MetaLab" prie norimo tinklo. Iš pradžių bandžiau prijungti Goerli, tačiau nepavyko.
+
+  Vėliau "MetaLab Support" https://support.metamask.io/networks-and-sidechains/eth-on-testnets/ perskaičiau, kad po Dencun tinklo atnaujinimo Goerli testinis tinklas buvo oficialiai nutrauktas. 
+
+<img src="https://github.com/user-attachments/assets/a909a962-a2d2-487e-8712-abd210633f13" alt="Vaizdas" width="600"/>
+
+  Bandžiau naudoti Sepolia, tačiau norint pasipildyti piniginę, neradau tam tinkamos nemokamos vietos. 
+
+  Taigi toliau naudojau Holešky.
+
+2. Pasipildžiau piniginę. Naudojau "Cloud Google Web3". https://cloud.google.com/application/web3/faucet/ethereum/holesky
+
+<img src="https://github.com/user-attachments/assets/9836fc3b-002d-40ed-a195-1f6a6c90db01" alt="Vaizdas" width="600"/>
+
+Įrašiau adresą to accounto, į kurį norėjau gauti ETH.
+
+3. Naudojau Remix IDE. "Deploy & Run Transactions" nustačiau tokius nustatymus:
+
+<img src="https://github.com/user-attachments/assets/9ec61a82-004c-493b-9b59-e3cf475063a9" alt="Vaizdas" width="600"/>
+
+
+"Deploy"
+
+<img src="https://github.com/user-attachments/assets/dc6a4c61-c46f-499f-b2f8-22d4cf651c9d" alt="Vaizdas" width="600"/>
+
+Vykdant transakcijas, jas reikia patvirtinti "MetaMask"
+
+<img src="https://github.com/user-attachments/assets/0aeecb8a-1528-4a34-baa0-741d42f265c6" alt="Vaizdas" width="600"/>
+
+5. Testavimas
 
 ### 4. Išmaniosios sutarties vykdymo "logų" peržiūra, naudojant Ethereum testinį tinklą Etherscan
 
