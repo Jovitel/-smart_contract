@@ -559,11 +559,11 @@ networks: {
 
 "Deploy"
 
-<img src="https://github.com/user-attachments/assets/dc6a4c61-c46f-499f-b2f8-22d4cf651c9d" alt="Vaizdas" width="400"/>
+<img src="https://github.com/user-attachments/assets/dc6a4c61-c46f-499f-b2f8-22d4cf651c9d" alt="Vaizdas" width="200"/>
 
 Vykdant transakcijas, jas reikia patvirtinti "MetaMask"
 
-<img src="https://github.com/user-attachments/assets/0aeecb8a-1528-4a34-baa0-741d42f265c6" alt="Vaizdas" width="400"/>
+<img src="https://github.com/user-attachments/assets/0aeecb8a-1528-4a34-baa0-741d42f265c6" alt="Vaizdas" width="200"/>
 
 5. Testavimas
 
