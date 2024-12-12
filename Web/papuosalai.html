@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="Internetinė parduotuvė">
+    <meta name="keywords" content="">
+    <meta name="author" content="Jovita">
+    <title>Papuošalai</title>
+    <link rel="stylesheet" type="text/css" href="stilius_2.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
+</head>
+
+<body>
+    <!-- Modalas sutarties patvirtinimui -->
+    <div id="contractModal" class="modal">
+        <div class="modal-content">
+            <h2>Patvirtinkite sutartį</h2>
+            <p>Norėdami įsigyti prekę, prašome sutikti su mūsų sąlygomis:</p>
+            <button id="confirmContract" class="confirm-button">Patvirtinti</button>
+            <button id="cancelContract" class="cancel-button">Atšaukti</button>
+        </div>
+    </div>
+
+    <p style="text-align:center;" class="cl1">Nemokamas pristatymas paštomatu Lietuvoje nuo 50€</p>
+    <div class="container">
+        <img src="logo.png" alt="Logo">
+        <div class="buttons">
+            <div class="vertical-buttons">
+                <a href="#" class="button">IŠPARDAVIMAS</a>
+                <a href="#" class="button">Naujienos</a>
+            </div>
+            <div>
+                <a href="papuosalai.html" class="button">Papuošalai</a>
+                <a href="papuosalai_txt" class="button">Žvakės</a>
+                <a href="papuosalai_txt" class="button">Smilkalai</a>
+                <a href="papuosalai_txt" class="button">Namams</a>
+            </div>
+        </div>
+    </div>
+    <hr class="styled-line">
+    <div class="pap1">
+        <p><img src="pap1.png" alt="pap1" width="600"></p>
+    </div>
+    <div class="papuosalai-text">
+        <h1>PAPUOŠALAI</h1>
+        <h2>Papuošalų nešiojimas nuo seno buvo siejamas su magiška apsauga. Net ir dabar, papuošalus renkamės nesusimąstydamos, instinktyviai pasirinkdamos vieną ar kitą simbolį, kristalą ar metalą. Sidabriniai papuošalai stiprina intuiciją, atveria vidinę išmintį. Nerūdijantis plienas padeda pajausti balansą, įsižeminti. Auksas suteikia daugiau pasitikėjimo savimi, drąsos.</h2>
+    </div>
+    <hr class="styled-line">
+    <div class="gallery">
+        <div class="item">
+            <img src="pap01.png" alt="Prekė 1">
+            <p>€50 EUR</p>
+            <p>Sidabrinis žiedas su arbūziniu turmalinu</p>
+            <button class="add-to-cart" data-product="1" data-price="50">Pirkti</button>
+        </div>
+        <div class="item">
+            <img src="pap2.png" alt="Prekė 2">
+            <p>€60 EUR</p>
+            <p>Rožinio Kvarco kaklo papuošalas “Žvaigždė”</p>
+            <button class="add-to-cart" data-product="2" data-price="60">Pirkti</button>
+        </div>
+        <div class="item">
+            <img src="pap3.png" alt="Prekė 3">
+            <p>€70 EUR</p>
+            <p>Sidabrinis pakabukas su ametisto kristalu</p>
+            <button class="add-to-cart" data-product="3" data-price="70">Pirkti</button>
+        </div>
+        <div class="item">
+            <img src="pap4.png" alt="Prekė 4">
+            <p>€80 EUR</p>
+            <p>Afrikietiško turkio kaklo papuošalas</p>
+            <button class="add-to-cart" data-product="4" data-price="80">Pirkti</button>
+        </div>
+    </div>
+    <hr class="styled-line">
+    
+    <div class="center">
+        <a class="link-spalva" href="mailto:jovita.venck@gmail.com">jovita.venck@gmail.com</a>
+    </div>
+    <div class="center">
+        <a class="link-spalva" href="tel:+37063832087">+37063832087</a>
+    </div>
+    <div class="center foto">
+        <p><img src="logo.png" alt="Logo" width="100"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* Bendrieji stiliai */
+body {
+    background-color: #000000; /* Fono spalva */
+    margin: 0; /* Pašalina numatytąjį kraštą */
+    padding: 0; /* Pašalina numatytąjį užpildymą */
+}
+
+/* Viršutinė informacijos juosta */
+.cl1 {
+    background-color: #b98e5b; /* Fono spalva */
+    color: #000000; /* Teksto spalva */
+    margin: 0; /* Pašalina numatytąjį kraštą */
+    padding: 10px; /* Užpildymas */
+    text-align: center; /* Centruoti tekstą */
+}
+
+/* Flex konteineris nuotraukai ir mygtukams */
+.container {
+    display: flex; /* Lankstus dizainas */
+    align-items: center; /* Vertikalus centravimas */
+    justify-content: flex-start; /* Horizontali aligacija */
+    padding: 7px; /* Užpildymas */
+}
+
+/* Mygtukų stilius */
+.buttons {
+    display: flex; /* Lankstus dizainas */
+    flex-wrap: wrap; /* Leidžia lankstymą */
+}
+
+/* Nuotraukos stilius */
+.container img {
+    width: 150px; /* Nuotraukos plotis */
+    margin: 7px; /* Tarpas aplink nuotrauką */
+}
+
+/* Vertikalių mygtukų stulpelis */
+.vertical-buttons {
+    display: flex; /* Lankstus dizainas */
+    flex-direction: column; /* Vertikali kryptis */
+    margin-right: 20px; /* Tarpas dešinėje */
+}
+
+/* Mygtukų stilius */
+.buttons button, .buttons a.button {
+    margin: 25px; /* Tarpas aplink mygtuką */
+    padding: 10px 20px; /* Vidinis užpildymas */
+    background-color: #000000; /* Fonas */
+    color: white; /* Teksto spalva */
+    border: none; /* Pašalina rėmelį */
+    cursor: pointer; /* Rodyklė keičiasi į ranką */
+    text-decoration: none; /* Pašalina nuorodų pabraukimą */
+    display: inline-block; /* In-line blokas */
+    transition: background-color 0.3s; /* Pagrindinis perėjimo efektas */
+}
+
+/* Mygtukų stilius, kai pelė virš jų */
+.buttons button:hover, .buttons a.button:hover {
+    background-color: #1f1d1d; /* Fonas pelės užvedimo metu */
+}
+
+/* Apie mus blokas su fonu */
+.apie {
+    background-color: #FFFCF5; /* Fono spalva */
+    color: #000000; /* Teksto spalva */
+    padding: 50px 50px 30px; /* Užpildymas */
+    width: 50vw; /* Plotis */
+    height: auto; /* Automatiškai prisitaiko prie turinio */
+    box-sizing: border-box; /* Įskaičiuoti užpildymą ir rėmelį */
+    display: flex; /* Lankstus dizainas */
+    flex-direction: column; /* Vertikali kryptis */
+    align-items: center; /* Centrinti elementus */
+    justify-content: center; /* Horizontalus centravimas */
+    margin-top: 65px;
+}
+
+/* Apie mus nuotraukos stilius */
+.apie img {
+    width: 100%; /* Nuotraukos plotis prisitaiko prie talpyklos */
+    max-width: 320px; /* Maksimalus plotis */
+    margin-bottom: 30px; /* Tarpas po nuotrauka */
+}
+
+/* Apie mus teksto stilius */
+.apie p {
+    font-family: Arial, Helvetica, sans-serif; /* Šrifto šeima */
+    width: 300px; /* Pastraipos plotis */
+    text-align: center; /* Centruoti tekstą */
+    margin: 0; /* Pašalina numatytąjį atstumą */
+}
+
+/* Apie mus blokas */
+.about-container {
+    display: flex; /* Lankstus dizainas */
+    align-items: flex-start; /* Elementai sulygiuojami viršuje */
+    justify-content: space-between; /* Tarpas tarp elementų */
+    gap: 10px; /* Atstumas tarp elementų */
+}
+
+/* Foto blokas */
+.foto {
+    background-color: #000000; /* Fono spalva */
+    color: #000000; /* Teksto spalva */
+    padding: 50px; /* Užpildymas */
+    width: 50vw; /* Plotis */
+    height: auto; /* Automatiškai prisitaiko prie turinio */
+    box-sizing: border-box; /* Įskaičiuoti užpildymą ir rėmelį */
+    display: flex; /* Lankstus dizainas */
+    flex-direction: column; /* Vertikali kryptis */
+    align-items: center; /* Centrinti elementus */
+    justify-content: center; /* Horizontalus centravimas */
+}
+
+/* Foto nuotraukos stilius */
+.foto img {
+    width: 100%; /* Nuotraukos plotis prisitaiko prie talpyklos */
+    max-width: 550px; /* Maksimalus plotis */
+    margin: 20px 0 15px; /* Tarpas virš ir po nuotrauka */
+}
+
+/* Nuorodų spalva */
+.link-spalva {
+    color: #ffd90083; /* Spalva */
+    text-align: center; /* Centruoti tekstą */
+    display: inline-block; /* In-line blokas */
+}
+
+/* Centrinis blokas */
+.center {
+    text-align: center; /* Centruoti tekstą */
+    margin-bottom: 20px; /* Tarpas apačioje */
+}
+
+/* Linijos stilius */
+.styled-line {
+    border: none; /* Pašalina standartinį rėmelį */
+    height: 2px; /* Linijos aukštis */
+    background-color: #1d1d1d; /* Linijos spalva */
+    margin: 20px 0; /* Erdvė virš ir po linija */
+}
+
+/* Reaguojančio dizaino terpės užklausos */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Elementai persikels vertikaliai */
+        align-items: center; /* Centrinti elementus */
+    }
+
+    .apie, .foto {
+        width: 90vw; /* Platesnis plotis mažesniuose ekranuose */
+        padding: 30px; /* Sumažintas užpildymas */
+    }
+
+    .buttons button, .buttons a.button {
+        padding: 8px 16px; /* Mažesni mygtukai */
+        margin: 10px; /* Mažesni tarpai */
+    }
+
+    .apie img, .foto img {
+        width: 100%; /* Nuotraukos prisitaiko prie talpyklos */
+        max-width: 320px; /* Maksimalus plotis */
+    }
+}
